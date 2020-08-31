@@ -14,6 +14,11 @@ app.add_middleware(
     CORSMiddleware, allow_origins=["*"], allow_headers=["*"], allow_methods=["*"],
 )
 
+# loading hub module
+hub_module = hub.load(
+    "https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/1"
+)
+
 
 def tensor_to_image(tensor):
     tensor = tensor * 255
@@ -43,23 +48,16 @@ def load_img(path_to_img):
 
 @app.post("/style")
 async def create_file(content_file: bytes = File(...), style_file: bytes = File(...)):
-    print(type(content_file), type(style_file))
-    print(content_file[:10])
     content_image = Image.open(io.BytesIO(content_file))
     style_image = Image.open(io.BytesIO(style_file))
-    print("Content: {}, Style: {}".format(content_image.size, style_image.size))
     content_image.save("content.png")
     style_image.save("style.png")
     content_image = load_img("./content.png")
     style_image = load_img("./style.png")
     os.remove("content.png")
     os.remove("style.png")
-    hub_module = hub.load(
-        "https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/1"
-    )
     stylized_image = hub_module(tf.constant(content_image), tf.constant(style_image))[0]
     buffered = io.BytesIO()
     tensor_to_image(stylized_image).save(buffered, format="PNG")
     img_str = base64.b64encode(buffered.getvalue())
     return {"stylized_image": img_str}
-

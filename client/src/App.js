@@ -3,7 +3,7 @@ import { Container } from "@material-ui/core";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Front from "./components/Front";
-// , Grid, Paper
+
 function App() {
   return (
     <Router>
