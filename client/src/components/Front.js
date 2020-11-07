@@ -6,6 +6,10 @@ import {
   Button,
   Card,
   CardMedia,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@material-ui/core";
 import FileUpload from "../components/FileUpload";
 
@@ -82,6 +86,16 @@ const Front = () => {
             file={styleFile}
             handleFileChange={handleStyleFileChange}
           />
+          <br />
+          <FormControl style={{ width: "50%" }}>
+            <InputLabel>Select Model</InputLabel>
+            <Select>
+              <MenuItem value={1}>Model #1</MenuItem>
+              <MenuItem value={2}>Model #2</MenuItem>
+              <MenuItem value={3}>Model #3</MenuItem>
+            </Select>
+          </FormControl>
+          <br />
           <Button
             onClick={onStart}
             style={{ marginTop: "20px" }}
