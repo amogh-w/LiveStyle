@@ -18,14 +18,14 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import SearchIcon from "@material-ui/icons/Search";
+// import SearchIcon from "@material-ui/icons/Search";
 import DescriptionIcon from "@material-ui/icons/Description";
 import InfoIcon from "@material-ui/icons/Info";
 import List from "@material-ui/core/List";
 import logo from "../media/logo.png";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 import Brightness2Icon from "@material-ui/icons/Brightness2";
-import ChatIcon from "@material-ui/icons/Chat";
+// import ChatIcon from "@material-ui/icons/Chat";
 
 const Navbar = ({ darkState, handleThemeChange }) => {
   const [open, setOpen] = React.useState(false);
@@ -182,12 +182,12 @@ const Navbar = ({ darkState, handleThemeChange }) => {
               </ListItemIcon>
               <ListItemText>Dashboard</ListItemText>
             </ListItem>
-            <ListItem button component={Link} to="/analyzer">
+            {/* <ListItem button component={Link} to="/analyzer">
               <ListItemIcon>
                 <SearchIcon />
               </ListItemIcon>
               <ListItemText>Tweet Analyzer</ListItemText>
-            </ListItem>
+            </ListItem> */}
             <ListItem button component={Link} to="/resources">
               <ListItemIcon>
                 <DescriptionIcon />
@@ -200,12 +200,12 @@ const Navbar = ({ darkState, handleThemeChange }) => {
               </ListItemIcon>
               <ListItemText>About</ListItemText>
             </ListItem>
-            <ListItem button component={Link} to="/chatbot">
+            {/* <ListItem button component={Link} to="/chatbot">
               <ListItemIcon>
                 <ChatIcon />
               </ListItemIcon>
               <ListItemText>Chatbot</ListItemText>
-            </ListItem>
+            </ListItem> */}
           </List>
           <Divider />
         </Drawer>
@@ -246,7 +246,7 @@ const Navbar = ({ darkState, handleThemeChange }) => {
               noWrap
               className={classes.title}
             >
-              COVIDian #IndiaFightsCorona
+              An Application to Transfer Artistic Styles
             </Typography>
             <Button
               color="primary"
@@ -287,12 +287,12 @@ const Navbar = ({ darkState, handleThemeChange }) => {
               </ListItemIcon>
               <ListItemText>Dashboard</ListItemText>
             </ListItem>
-            <ListItem button component={Link} to="/analyzer">
+            {/* <ListItem button component={Link} to="/analyzer">
               <ListItemIcon>
                 <SearchIcon />
               </ListItemIcon>
               <ListItemText>Tweet Analyzer</ListItemText>
-            </ListItem>
+            </ListItem> */}
             <ListItem button component={Link} to="/resources">
               <ListItemIcon>
                 <DescriptionIcon />
@@ -305,12 +305,12 @@ const Navbar = ({ darkState, handleThemeChange }) => {
               </ListItemIcon>
               <ListItemText>About</ListItemText>
             </ListItem>
-            <ListItem button component={Link} to="/chatbot">
+            {/* <ListItem button component={Link} to="/chatbot">
               <ListItemIcon>
                 <ChatIcon />
               </ListItemIcon>
               <ListItemText>Chatbot</ListItemText>
-            </ListItem>
+            </ListItem> */}
           </List>
           <Divider />
         </Drawer>
@@ -381,12 +381,12 @@ const Navbar = ({ darkState, handleThemeChange }) => {
               </ListItemIcon>
               <ListItemText>Dashboard</ListItemText>
             </ListItem>
-            <ListItem button component={Link} to="/analyzer">
+            {/* <ListItem button component={Link} to="/analyzer">
               <ListItemIcon>
                 <SearchIcon />
               </ListItemIcon>
               <ListItemText>Tweet Analyzer</ListItemText>
-            </ListItem>
+            </ListItem> */}
             <ListItem button component={Link} to="/resources">
               <ListItemIcon>
                 <DescriptionIcon />
@@ -399,12 +399,12 @@ const Navbar = ({ darkState, handleThemeChange }) => {
               </ListItemIcon>
               <ListItemText>About</ListItemText>
             </ListItem>
-            <ListItem button component={Link} to="/chatbot">
+            {/* <ListItem button component={Link} to="/chatbot">
               <ListItemIcon>
                 <ChatIcon />
               </ListItemIcon>
               <ListItemText>Chatbot</ListItemText>
-            </ListItem>
+            </ListItem> */}
           </List>
           <Divider />
         </Drawer>
