@@ -5,7 +5,7 @@ const Resources = () => {
   return (
     <div>
       <Paper style={{ margin: "10px", padding: "10px" }}>
-        <Typography variant="h4">Technology</Typography>
+        <Typography variant="h4">Models</Typography>
         <Divider style={{ margin: "10px" }} />
         <Typography variant="p">
           <b>Convolutional Neural Network #1 VGG 19</b>

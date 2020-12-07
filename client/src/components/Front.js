@@ -6,10 +6,10 @@ import {
   Button,
   Card,
   CardMedia,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
+  // FormControl,
+  // InputLabel,
+  // Select,
+  // MenuItem,
 } from "@material-ui/core";
 import FileUpload from "../components/FileUpload";
 
@@ -17,6 +17,8 @@ const Front = () => {
   const [contentFile, contentFileHandle] = useState([]);
   const [styleFile, styleFileHandle] = useState([]);
   const [output, setOutput] = useState("");
+  const [output2, setOutput2] = useState("");
+  const [output3, setOutput3] = useState("");
   const [contentOut, setContentOut] = useState("");
   const [styleOut, setStyleOut] = useState("");
 
@@ -57,6 +59,8 @@ const Front = () => {
       .then((response) => response.json())
       .then((data) => {
         setOutput(data.stylized_image);
+        setOutput2(data.stylized_image2);
+        setOutput3(data.stylized_image3);
       });
     toBase64(contentFile).then((result) => {
       setContentOut(result);
@@ -87,14 +91,14 @@ const Front = () => {
             handleFileChange={handleStyleFileChange}
           />
           <br />
-          <FormControl style={{ width: "50%" }}>
+          {/* <FormControl style={{ width: "50%" }}>
             <InputLabel>Select Model</InputLabel>
             <Select>
               <MenuItem value={1}>Model #1</MenuItem>
               <MenuItem value={2}>Model #2</MenuItem>
               <MenuItem value={3}>Model #3</MenuItem>
             </Select>
-          </FormControl>
+          </FormControl> */}
           <br />
           <Button
             onClick={onStart}
@@ -125,11 +129,37 @@ const Front = () => {
                 <CardMedia component="img" src={styleOut} />
               </Card>
             </Grid>
+          </Grid>
+          <Grid
+            container
+            spacing={4}
+            direction="row"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
             <Grid item xs={12} sm={6} md={3}>
               <Card>
+                <Typography>VGG 19</Typography>
                 <CardMedia
                   component="img"
                   src={"data:image/png;base64," + output}
+                />
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <Card>
+                <Typography>Inception V3</Typography>
+                <CardMedia
+                  component="img"
+                  src={"data:image/png;base64," + output2}
+                />
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <Card>
+                <Typography>GAN</Typography>
+                <CardMedia
+                  component="img"
+                  src={"data:image/png;base64," + output3}
                 />
               </Card>
             </Grid>
