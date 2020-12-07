@@ -105,12 +105,10 @@ const Front = () => {
           </Button>
         </Grid>
       </Grid>
-      <Paper>
-        {output === "" ? (
-          <Typography style={{ textAlign: "center" }}>
-            Click the button!
-          </Typography>
-        ) : (
+      {output === "" ? (
+        <div></div>
+      ) : (
+        <Paper style={{ margin: "20px", padding: "20px" }}>
           <Grid
             container
             spacing={4}
@@ -136,9 +134,9 @@ const Front = () => {
               </Card>
             </Grid>
           </Grid>
-        )}
-      </Paper>
-      <Grid container spacing={2}>
+        </Paper>
+      )}
+      {/* <Grid container spacing={2}>
         <Grid item xs={12} align="center" style={{ paddingTop: "50px" }}>
           <Button
             onClick={onReset}
@@ -148,7 +146,7 @@ const Front = () => {
             Reset
           </Button>
         </Grid>
-      </Grid>
+      </Grid> */}
     </div>
   );
 };
