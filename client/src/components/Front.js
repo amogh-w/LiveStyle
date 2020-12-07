@@ -38,7 +38,7 @@ const Front = () => {
     });
 
   const onStart = async () => {
-    let url = "/api/style";
+    let url = "http://localhost:4000/style";
     let formData = new FormData();
 
     formData.append("content_file", contentFile);
@@ -66,9 +66,9 @@ const Front = () => {
     });
   };
 
-  const onReset = () => {
-    window.location.reload(true);
-  };
+  // const onReset = () => {
+  //   window.location.reload(true);
+  // };
 
   return (
     <div>
