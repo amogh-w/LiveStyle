@@ -42,7 +42,7 @@ const Front = () => {
     });
 
   const onStart = async () => {
-    let url = "http://localhost:4000/style";
+    let url = "/api/style";
     let formData = new FormData();
 
     formData.append("content_file", contentFile);
