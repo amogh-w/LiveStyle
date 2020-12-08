@@ -11,6 +11,7 @@ import {
   // Select,
   // MenuItem,
 } from "@material-ui/core";
+// import Loader from "./spinnerScreen";
 import FileUpload from "../components/FileUpload";
 
 const Front = () => {
@@ -21,6 +22,7 @@ const Front = () => {
   const [output3, setOutput3] = useState("");
   const [contentOut, setContentOut] = useState("");
   const [styleOut, setStyleOut] = useState("");
+  // const [loading, setLoading] = useState(false);
 
   const handleContentFileChange = useCallback(
     (e) => contentFileHandle(e.target.files[0]),
@@ -52,6 +54,8 @@ const Front = () => {
     //   headers: { "content-type": "multipart/form-data" },
     // };
 
+    // setLoading(true);
+
     await fetch(url, {
       method: "POST",
       body: formData,
@@ -75,6 +79,7 @@ const Front = () => {
   // };
 
   return (
+    // <React.Suspense fallback={<Loader loading={true} />}>
     <div>
       <Grid container spacing={2}>
         <Grid item xs={12} align="center">
@@ -178,6 +183,7 @@ const Front = () => {
         </Grid>
       </Grid> */}
     </div>
+    // </React.Suspense>
   );
 };
 
